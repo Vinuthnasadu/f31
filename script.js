@@ -5,7 +5,7 @@ fetch('https://dummyjson.com/products')
     const productContainer = document.getElementById('productContainer');
     let newHtml= data.products.map((products)=>
     {
-      return =`
+      return `
         <div class="product-item">
           <img src="${product.image}" alt="${product.name}">
           <h3>${product.name}</h3>

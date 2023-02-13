@@ -3,10 +3,9 @@ fetch('https://dummyjson.com/products')
   .then(response => response.json())
   .then(data => {
     const productContainer = document.getElementById('productContainer');
-
-    let products = '';
-    data.forEach(product => {
-      products += `
+    let newHtml= data.products.map((products)=>
+    {
+      return =`
         <div class="product-item">
           <img src="${product.image}" alt="${product.name}">
           <h3>${product.name}</h3>
@@ -17,10 +16,5 @@ fetch('https://dummyjson.com/products')
         </div>
       `;
     });
-
-    productContainer.innerHTML = `
-      <div class="product">
-        ${products}
-      </div>
-    `;
+     productContainer.innerHTML= newHtml;
   });
